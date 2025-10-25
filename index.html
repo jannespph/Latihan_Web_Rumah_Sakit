@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumah Sakit Mabar - Pelayanan Kesehatan Terdepan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        },
+                        accent: {
+                            500: '#f97316',
+                            600: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold text-gray-900">Rumah Sakit Mabar</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
+                        <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
+                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+                <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
+                <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
+                <a href="layanan.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
+                <a href="tentang.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
+                <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
+                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center py-20" style="background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1920&q=80')">
+        
+        <div class="absolute inset-0 bg-black/60"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Pelayanan Kesehatan <span class="text-primary-100">Terdepan</span> untuk Anda
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                    Melayani Dengan Hati, Mengutamakan Kesembuhan Anda
+                </p>
+                </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="py-16 relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920&q=80')">
+        
+        <div class="absolute inset-0 bg-white/90"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Rumah Sakit Mabar berkomitmen memberikan pelayanan kesehatan terbaik dengan teknologi modern dan tenaga medis profesional yang berpengalaman.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="text-center">
+                    <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Pelayanan Terpercaya</h3>
+                    <p class="text-gray-600">Melayani dengan sepenuh hati dan profesionalisme tinggi</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-secondary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-stethoscope text-secondary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Teknologi Modern</h3>
+                    <p class="text-gray-600">Menggunakan peralatan medis terkini untuk diagnosis akurat</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-accent-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-accent-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Layanan 24 Jam</h3>
+                    <p class="text-gray-600">Siap melayani kebutuhan kesehatan Anda kapan saja</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Layanan Kami</h2>
+                <p class="text-lg text-gray-600">Berbagai layanan kesehatan terlengkap untuk kebutuhan Anda</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-user-md text-primary-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Poli Umum</h3>
+                    <p class="text-gray-600 mb-4">Pemeriksaan kesehatan umum dan konsultasi medis</p>
+                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-ambulance text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Gawat Darurat 24 Jam</h3>
+                    <p class="text-gray-600 mb-4">Layanan emergency siap 24 jam setiap hari</p>
+                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-secondary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-flask text-secondary-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Laboratorium Klinis</h3>
+                    <p class="text-gray-600 mb-4">Pemeriksaan laboratorium lengkap dan akurat</p>
+                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-accent-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-baby text-accent-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Spesialis Anak</h3>
+                    <p class="text-gray-600 mb-4">Perawatan khusus untuk kesehatan anak-anak</p>
+                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Testimoni Pasien</h2>
+                <p class="text-lg text-gray-600">Kepercayaan pasien adalah prioritas utama kami</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Pelayanan yang sangat memuaskan. Dokter dan perawat sangat ramah dan profesional."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-primary-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Citra</p>
+                            <p class="text-sm text-gray-600">Pasien Poli Umum</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Fasilitas modern dan bersih. Proses pendaftaran online sangat memudahkan."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-secondary-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Japak</p>
+                            <p class="text-sm text-gray-600">Pasien Spesialis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Layanan gawat darurat yang cepat dan tanggap. Terima kasih tim medis yang luar biasa."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-user text-accent-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Andika</p>
+                            <p class="text-sm text-gray-600">Pasien IGD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold">Rumah Sakit Mabar</span>
+                    </div>
+                    <p class="text-gray-400">Melayani dengan hati, mengutamakan kesembuhan Anda.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Jl. Notes No.44b</p>
+                        <p><i class="fas fa-phone mr-2"></i>(+62) 81371099148</p>
+                        <p><i class="fas fa-envelope mr-2"></i>pakpahanjannes0@gmail.com</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Layanan</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Poli Umum</a></li>
+                        <li><a href="#" class="hover:text-white">Gawat Darurat</a></li>
+                        <li><a href="#" class="hover:text-white">Laboratorium</a></li>
+                        <li><a href="#" class="hover:text-white">Spesialis</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Media Sosial</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 PT. Cipta Hospital Indonesia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Service buttons hover effect
+        document.querySelectorAll('.bg-white button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Informasi lebih lanjut akan segera tersedia!');
+            });
+        });
+    </script>
+</body>
+</html>

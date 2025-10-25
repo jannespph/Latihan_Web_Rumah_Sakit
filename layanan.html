@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami - Rumah Sakit Mabar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        },
+                        accent: {
+                            500: '#f97316',
+                            600: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold text-gray-900">Rumah Sakit Mabar</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="layanan.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
+                        <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
+                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+                <a href="pendaftaran.html" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
+                <a href="jadwal-dokter.html" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
+                <a href="layanan.html" class="text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
+                <a href="tentang.html" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
+                <a href="pembayaran.html" class="text-gray-700 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
+                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Layanan Kami</h1>
+                <p class="text-gray-600">Kami menyediakan berbagai layanan kesehatan untuk memenuhi kebutuhan Anda</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-stethoscope text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-center">Konsultasi Dokter</h3>
+                    <p class="text-gray-600 text-center">Layanan konsultasi dengan dokter spesialis maupun umum sesuai kebutuhan pasien.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-syringe text-secondary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-center">Vaksinasi</h3>
+                    <p class="text-gray-600 text-center">Layanan imunisasi lengkap untuk anak-anak dan dewasa sesuai jadwal resmi.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 bg-accent-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-ambulance text-accent-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-center">Layanan Darurat</h3>
+                    <p class="text-gray-600 text-center">Tersedia 24 jam untuk penanganan darurat dan gawat darurat medis.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-x-ray text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-center">Radiologi & Lab</h3>
+                    <p class="text-gray-600 text-center">Pemeriksaan laboratorium dan radiologi dengan peralatan modern.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-tooth text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-center">Kesehatan Gigi</h3>
+                    <p class="text-gray-600 text-center">Layanan perawatan gigi dan mulut untuk segala usia.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 mx-auto">
+                        <i class="fas fa-heartbeat text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 text-center">Kardiologi</h3>
+                    <p class="text-gray-600 text-center">Pemeriksaan dan perawatan penyakit jantung oleh dokter spesialis berpengalaman.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

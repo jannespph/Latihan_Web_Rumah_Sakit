@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - PT. Cipta Hospital Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        },
+                        accent: {
+                            500: '#f97316',
+                            600: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold text-gray-900">PT. Cipta Hospital Indonesia</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="admin-dashboard.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="rekam-medis.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Rekam Medis</a>
+                        <div class="relative">
+                            <button id="profile-menu" class="flex items-center text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">
+                                <i class="fas fa-user-circle mr-2"></i>
+                                Admin
+                                <i class="fas fa-chevron-down ml-1"></i>
+                            </button>
+                            <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                                <a href="login-register.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-sm min-h-screen">
+            <div class="p-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Menu Admin</h2>
+                <nav class="space-y-2">
+                    <a href="#dashboard" class="nav-link active flex items-center px-3 py-2 text-sm font-medium rounded-md bg-primary-100 text-primary-700">
+                        <i class="fas fa-tachometer-alt mr-3"></i>
+                        Dashboard
+                    </a>
+                    <a href="#patients" class="nav-link flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100">
+                        <i class="fas fa-users mr-3"></i>
+                        Manajemen Pasien
+                    </a>
+                    <a href="#doctors" class="nav-link flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100">
+                        <i class="fas fa-user-md mr-3"></i>
+                        Manajemen Dokter
+                    </a>
+                    <a href="#appointments" class="nav-link flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100">
+                        <i class="fas fa-calendar-alt mr-3"></i>
+                        Laporan Kunjungan
+                    </a>
+                    <a href="#users" class="nav-link flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100">
+                        <i class="fas fa-user-cog mr-3"></i>
+                        Manajemen User
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Dashboard Section -->
+            <div id="dashboard-section" class="section">
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Dashboard Admin</h1>
+                    <p class="text-gray-600">Selamat datang di panel administrasi rumah sakit</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-primary-100 rounded-lg">
+                                <i class="fas fa-users text-primary-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Total Kunjungan Hari Ini</p>
+                                <p class="text-2xl font-bold text-gray-900">127</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-secondary-100 rounded-lg">
+                                <i class="fas fa-user-plus text-secondary-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Pasien Baru Minggu Ini</p>
+                                <p class="text-2xl font-bold text-gray-900">23</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-accent-100 rounded-lg">
+                                <i class="fas fa-clock text-accent-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Antrian Aktif</p>
+                                <p class="text-2xl font-bold text-gray-900">15</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <div class="flex items-center">
+                            <div class="p-2 bg-green-100 rounded-lg">
+                                <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-gray-600">Pendapatan Bulan Ini</p>
+                                <p class="text-2xl font-bold text-gray-900">Rp 45.2M</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Recent Activity -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Chart -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Kunjungan Pasien (7 Hari Terakhir)</h3>
+                        <canvas id="visitChart" width="400" height="200"></canvas>
+                    </div>
+                    <!-- Recent Activity -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Aktivitas Terbaru</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-primary-500 rounded-full mr-3"></div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">Pasien baru terdaftar</p>
+                                    <p class="text-xs text-gray-600">Ahmad Santoso - 2 menit yang lalu</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-secondary-500 rounded-full mr-3"></div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">Pembayaran diterima</p>
+                                    <p class="text-xs text-gray-600">Siti Nurhaliza - Rp 155.000 - 5 menit yang lalu</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">Antrian baru</p>
+                                    <p class="text-xs text-gray-600">Budi Hartono - Poli Jantung - 10 menit yang lalu</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">Konsultasi selesai</p>
+                                    <p class="text-xs text-gray-600">Maya Sari - Dr. Lisa Permata - 15 menit yang lalu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Aksi Cepat</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <button id="add-doctor-btn" class="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-primary-500 hover:bg-primary-50 transition-colors">
+                            <div class="text-center">
+                                <i class="fas fa-user-md text-2xl text-gray-400 mb-2"></i>
+                                <p class="font-medium text-gray-600">Tambah Dokter Baru</p>
+                            </div>
+                        </button>
+                        <button id="view-reports-btn" class="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-secondary-500 hover:bg-secondary-50 transition-colors">
+                            <div class="text-center">
+                                <i class="fas fa-chart-bar text-2xl text-gray-400 mb-2"></i>
+                                <p class="font-medium text-gray-600">Lihat Laporan Lengkap</p>
+                            </div>
+                        </button>
+                        <button class="flex items-center justify-center p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-accent-500 hover:bg-accent-50 transition-colors">
+                            <div class="text-center">
+                                <i class="fas fa-cog text-2xl text-gray-400 mb-2"></i>
+                                <p class="font-medium text-gray-600">Pengaturan Sistem</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Sections (Hidden by default) -->
+            <div id="patients-section" class="section hidden">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Manajemen Pasien</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="flex justify-between items-center mb-4">
+            <input type="text" placeholder="Cari Pasien..." class="px-4 py-2 border rounded-lg focus:ring-primary-500 focus:border-primary-500">
+            <button class="bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors">
+                Tambah Pasien Baru
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Pasien</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No. Rekam Medis</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Lahir</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Budi Santoso</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">RM00123</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1990-05-15</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-900 mr-2" onclick="alert('Lihat detail pasien Budi Santoso')">Lihat</button>
+                            <button class="text-red-600 hover:text-red-900" onclick="alert('Hapus pasien Budi Santoso')">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Siti Aminah</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">RM00124</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">1988-11-20</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-900 mr-2" onclick="alert('Lihat detail pasien Siti Aminah')">Lihat</button>
+                            <button class="text-red-600 hover:text-red-900" onclick="alert('Hapus pasien Siti Aminah')">Hapus</button>
+                        </td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+            <div id="doctors-section" class="section hidden">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Manajemen Dokter</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="flex justify-between items-center mb-4">
+            <input type="text" placeholder="Cari Dokter..." class="px-4 py-2 border rounded-lg focus:ring-primary-500 focus:border-primary-500">
+            <button class="bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors">
+                Tambah Dokter Baru
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Dokter</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Spesialisasi</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jadwal</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Dr. Sarah Wijaya</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Dokter Umum</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Sen-Jum (09:00-17:00)</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-900 mr-2" onclick="alert('Edit jadwal Dr. Sarah')">Edit</button>
+                            <button class="text-red-600 hover:text-red-900" onclick="alert('Hapus Dr. Sarah')">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Dr. Rizal Effendi</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Spesialis Anak</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Sel-Sab (10:00-16:00)</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-900 mr-2" onclick="alert('Edit jadwal Dr. Rizal')">Edit</button>
+                            <button class="text-red-600 hover:text-red-900" onclick="alert('Hapus Dr. Rizal')">Hapus</button>
+                        </td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+            <div id="appointments-section" class="section hidden">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Laporan Kunjungan</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="flex items-center space-x-4 mb-4">
+            <label for="report-month" class="text-gray-700">Filter Bulan:</label>
+            <select id="report-month" class="px-4 py-2 border rounded-lg focus:ring-primary-500 focus:border-primary-500">
+                <option>Januari</option>
+                <option>Februari</option>
+                <option selected>Juni</option>
+                <option>Juli</option>
+            </select>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors" onclick="alert('Membuat laporan bulan terpilih')">Generate Laporan</button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Kunjungan</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pasien Baru</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jenis Pelayanan</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2024-06-25</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">120</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">15</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Umum, Gigi, Anak</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2024-06-26</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">110</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">10</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Umum, Mata</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+            <div id="users-section" class="section hidden">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Manajemen User</h2>
+    <div class="bg-white p-6 rounded-lg shadow-sm">
+        <div class="flex justify-between items-center mb-4">
+            <input type="text" placeholder="Cari User..." class="px-4 py-2 border rounded-lg focus:ring-primary-500 focus:border-primary-500">
+            <button class="bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors">
+                Tambah User Baru
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama User</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Admin Utama</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">admin@ciptahospital.com</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Admin</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600">Aktif</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-900 mr-2" onclick="alert('Edit user Admin Utama')">Edit</button>
+                            <button class="text-red-600 hover:text-red-900" onclick="alert('Hapus user Admin Utama')">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Petugas Pendaftaran</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">daftar@ciptahospital.com</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600">Petugas</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600">Aktif</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm">
+                            <button class="text-indigo-600 hover:text-indigo-900 mr-2" onclick="alert('Edit user Petugas Pendaftaran')">Edit</button>
+                            <button class="text-red-600 hover:text-red-900" onclick="alert('Hapus user Petugas Pendaftaran')">Hapus</button>
+                        </td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+        </main>
+    </div>
+
+    <!-- Add Doctor Modal -->
+    <div id="doctor-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg max-w-2xl mx-4 w-full">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold text-gray-900">Tambah Dokter Baru</h3>
+                <button id="close-doctor-modal" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <form id="doctor-form" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="doctor-name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input type="text" id="doctor-name" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="doctor-specialty" class="block text-sm font-medium text-gray-700 mb-1">Spesialisasi</label>
+                        <select id="doctor-specialty" required 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <option value="">Pilih Spesialisasi</option>
+                            <option value="umum">Dokter Umum</option>
+                            <option value="anak">Spesialis Anak</option>
+                            <option value="jantung">Spesialis Jantung</option>
+                            <option value="saraf">Spesialis Saraf</option>
+                            <option value="mata">Spesialis Mata</option>
+                            <option value="gigi">Dokter Gigi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="doctor-phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
+                        <input type="tel" id="doctor-phone" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="doctor-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="doctor-email" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                </div>
+                <div>
+                    <label for="doctor-schedule" class="block text-sm font-medium text-gray-700 mb-1">Jadwal Praktik</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" name="schedule" value="senin" class="mr-2">
+                            <span class="text-sm">Senin</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="schedule" value="selasa" class="mr-2">
+                            <span class="text-sm">Selasa</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="schedule" value="rabu" class="mr-2">
+                            <span class="text-sm">Rabu</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="schedule" value="kamis" class="mr-2">
+                            <span class="text-sm">Kamis</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="schedule" value="jumat" class="mr-2">
+                            <span class="text-sm">Jumat</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="schedule" value="sabtu" class="mr-2">
+                            <span class="text-sm">Sabtu</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="flex space-x-3 pt-4">
+                    <button type="button" id="cancel-doctor" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded-md font-medium transition-colors">
+                        Batal
+                    </button>
+                    <button type="submit" class="flex-1 bg-primary-500 hover:bg-primary-600 text-white py-2 px-4 rounded-md font-medium transition-colors">
+                        Simpan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-600 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Dokter Berhasil Ditambahkan!</h3>
+                <p class="text-gray-600 mb-6">Data dokter baru telah berhasil disimpan ke sistem.</p>
+                <button id="success-close" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md font-medium">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Profile dropdown
+        document.getElementById('profile-menu').addEventListener('click', function() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            const profileMenu = document.getElementById('profile-menu');
+            const dropdown = document.getElementById('profile-dropdown');
+            if (!profileMenu.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSection = this.getAttribute('href').substring(1) + '-section';
+                
+                // Update active nav
+                navLinks.forEach(l => {
+                    l.classList.remove('active', 'bg-primary-100', 'text-primary-700');
+                    l.classList.add('text-gray-600');
+                });
+                this.classList.add('active', 'bg-primary-100', 'text-primary-700');
+                this.classList.remove('text-gray-600');
+                
+                // Show target section
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                document.getElementById(targetSection).classList.remove('hidden');
+            });
+        });
+
+        // Chart
+        const ctx = document.getElementById('visitChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
+                datasets: [{
+                    label: 'Kunjungan',
+                    data: [65, 78, 90, 81, 95, 85, 70],
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Modal functionality
+        const doctorModal = document.getElementById('doctor-modal');
+        const successModal = document.getElementById('success-modal');
+        const doctorForm = document.getElementById('doctor-form');
+
+        document.getElementById('add-doctor-btn').addEventListener('click', function() {
+            doctorModal.classList.remove('hidden');
+            doctorModal.classList.add('flex');
+        });
+
+        document.getElementById('close-doctor-modal').addEventListener('click', function() {
+            doctorModal.classList.add('hidden');
+            doctorModal.classList.remove('flex');
+        });
+
+        document.getElementById('cancel-doctor').addEventListener('click', function() {
+            doctorModal.classList.add('hidden');
+            doctorModal.classList.remove('flex');
+            doctorForm.reset();
+        });
+
+        doctorForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Close doctor modal and show success modal
+            doctorModal.classList.add('hidden');
+            doctorModal.classList.remove('flex');
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+            
+            // Reset form
+            doctorForm.reset();
+        });
+
+        document.getElementById('success-close').addEventListener('click', function() {
+            successModal.classList.add('hidden');
+            successModal.classList.remove('flex');
+        });
+
+        // View reports button
+        document.getElementById('view-reports-btn').addEventListener('click', function() {
+            alert('Laporan lengkap akan segera tersedia!');
+        });
+    </script>
+</body>
+</html>

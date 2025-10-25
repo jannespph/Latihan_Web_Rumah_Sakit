@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Dokter - PT. Cipta Hospital Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        },
+                        accent: {
+                            500: '#f97316',
+                            600: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold text-gray-900">PT. Cipta Hospital Indonesia</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="jadwal-dokter.html" class="text-gray-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
+                        <a href="tentang.html" class="text-primary-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
+                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-pray-600 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+                <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
+                <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
+                <a href="layanan.html" class="text-gray700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
+                <a href="tentang.html" class="text-primary-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
+                <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
+                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gambar utama -->
+    <section class="relative overflow-hidden mt-6">
+        <img src="gambar1.jpg" alt="Tim Kami" 
+            class="w-full h-[550px] object-cover rounded-none shadow-sm">
+    </section>
+
+    <!-- Tentang RS -->
+    <section class="max-w-7xl mx-auto py-16 px-6 md:flex md:items-center md:gap-10">
+        <!-- Gambar -->
+        <div class="md:w-1/2 mb-8 md:mb-0">
+            <img src="gambar2.jpg" alt="Dokter dan pasien" class="rounded-xl shadow-lg w-full">
+        </div>
+
+        <!-- Konten Teks -->
+        <div class="md:w-1/2">
+            <span class="bg-primary-100 text-primary-700 font-semibold text-sm px-3 py-1 rounded">
+                TENTANG CIPTA HOSPITAL INDONESIA
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-primary-600 mt-4 leading-tight">
+                Kesehatan dan Kenyamanan Anda Adalah<br>Prioritas Utama Kami
+            </h2>
+            <p class="mt-6 text-gray-700 leading-relaxed text-justify">
+                PT. Cipta Hospital Indonesia adalah rumah sakit modern yang berkomitmen memberikan pelayanan
+                kesehatan terbaik bagi masyarakat Indonesia. Dengan fasilitas medis yang lengkap, teknologi terkini,
+                dan tenaga medis profesional, kami berusaha menciptakan pengalaman perawatan yang nyaman, aman, dan
+                berkualitas tinggi untuk setiap pasien.
+            </p>
+            <p class="mt-4 text-gray-700 leading-relaxed text-justify">
+                Kami menyediakan berbagai layanan, mulai dari pemeriksaan umum, rawat inap, hingga layanan spesialis.
+                Dengan semangat melayani sepenuh hati, kami berkomitmen menjadi pilihan utama bagi keluarga dan dunia
+                bisnis dalam menjaga kesehatan.
+            </p>
+        </div>
+    </section>
+
+    <!-- Visi, Misi & Nilai-nilai -->
+    <section class="bg-blue-50 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800">Visi, Misi & Nilai-nilai</h2>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 px-6 mb-16">
+            <div class="bg-white shadow-md rounded-xl p-8">
+                <h3 class="text-2xl font-bold text-primary-600 mb-4 text-center">Visi Kami</h3>
+                <p class="text-gray-700 text-center">
+                    Menyediakan pelayanan perawatan sebaik mungkin lebih dekat dengan rumah.
+                </p>
+            </div>
+            <div class="bg-white shadow-md rounded-xl p-8">
+                <h3 class="text-2xl font-bold text-primary-600 mb-4 text-center">Misi Kami</h3>
+                <p class="text-gray-700 text-center">
+                    Memberikan hasil klinis terbaik di lingkungan yang paling mudah diakses, efektif, efisien, dan peduli.
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+            <div class="bg-primary-600 text-white p-8 rounded-xl shadow-md text-center">
+                <i class="fas fa-users text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Keutamaan Pelanggan</h4>
+                <p>Mengantisipasi kebutuhan pelanggan dan memenuhi harapan mereka.</p>
+            </div>
+            <div class="bg-primary-600 text-white p-8 rounded-xl shadow-md text-center">
+                <i class="fas fa-award text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Keunggulan</h4>
+                <p>Memberikan standar perawatan pasien yang tertinggi.</p>
+            </div>
+            <div class="bg-primary-600 text-white p-8 rounded-xl shadow-md text-center">
+                <i class="fas fa-handshake text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Kerja Sama</h4>
+                <p>Saling menghargai dalam bekerja sama untuk mencapai tujuan bersama.</p>
+            </div>
+            <div class="bg-primary-600 text-white p-8 rounded-xl shadow-md text-center">
+                <i class="fas fa-heartbeat text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Integritas</h4>
+                <p>Kejujuran dan komitmen untuk selalu melakukan hal yang benar.</p>
+            </div>
+            <div class="bg-primary-600 text-white p-8 rounded-xl shadow-md text-center">
+                <i class="fas fa-hand-holding-heart text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Kepedulian</h4>
+                <p>Menumbuhkan budaya peduli terhadap pasien dan keluarga mereka.</p>
+            </div>
+            <div class="bg-primary-600 text-white p-8 rounded-xl shadow-md text-center">
+                <i class="fas fa-people-group text-4xl mb-4"></i>
+                <h4 class="text-xl font-semibold mb-2">Komunitas</h4>
+                <p>Berbagi dan terlibat dalam kehidupan komunitas yang dilayani.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold">PT. Cipta Hospital Indonesia</span>
+                    </div>
+                    <p class="text-gray-400">Melayani dengan hati, mengutamakan kesembuhan Anda.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Jl. Kesehatan No. 123, Jakarta</p>
+                        <p><i class="fas fa-phone mr-2"></i>(021) 1234-5678</p>
+                        <p><i class="fas fa-envelope mr-2"></i>info@ciptahospital.co.id</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Layanan</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Poli Umum</a></li>
+                        <li><a href="#" class="hover:text-white">Gawat Darurat</a></li>
+                        <li><a href="#" class="hover:text-white">Laboratorium</a></li>
+                        <li><a href="#" class="hover:text-white">Spesialis</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Media Sosial</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 PT. Cipta Hospital Indonesia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Service buttons hover effect
+        document.querySelectorAll('.bg-white button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Informasi lebih lanjut akan segera tersedia!');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusat Ungggulan - Rumah Sakit Mabar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857'
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb'
+                        },
+                        accent: {
+                            500: '#f97316',
+                            600: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold text-gray-900">Rumah Sakit Mabar</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="jadwal-dokter.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
+                        <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
+                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                    </div>
+                </div>
+                <div class="md:hidden"> 
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+                <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
+                <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
+                <a href="layanan.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
+                <a href="tentang.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
+                <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
+                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gambar utama -->
+    <section class="relative overflow-hidden mt-6">
+        <img src="gambar1.jpg" alt="Tim Kami" 
+            class="w-full h-[550px] object-cover rounded-none shadow-sm">
+    </section>
+
+
+    <!-- Main Content -->
+    <main class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">Jadwal Dokter</h1>
+                <p class="text-gray-600">Lihat jadwal praktik dokter dan pesan antrian online</p>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="search-doctor" class="block text-sm font-medium text-gray-700 mb-1">Cari Dokter</label>
+                        <input type="text" id="search-doctor" placeholder="Nama dokter atau spesialisasi..."
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="filter-specialty" class="block text-sm font-medium text-gray-700 mb-1">Spesialisasi</label>
+                        <select id="filter-specialty" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <option value="">Semua Spesialisasi</option>
+                            <option value="umum">Dokter Umum</option>
+                            <option value="anak">Spesialis Anak</option>
+                            <option value="jantung">Spesialis Jantung</option>
+                            <option value="saraf">Spesialis Saraf</option>
+                            <option value="mata">Spesialis Mata</option>
+                            <option value="gigi">Dokter Gigi</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="filter-day" class="block text-sm font-medium text-gray-700 mb-1">Hari Praktik</label>
+                        <select id="filter-day" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                            <option value="">Semua Hari</option>
+                            <option value="senin">Senin</option>
+                            <option value="selasa">Selasa</option>
+                            <option value="rabu">Rabu</option>
+                            <option value="kamis">Kamis</option>
+                            <option value="jumat">Jumat</option>
+                            <option value="sabtu">Sabtu</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor Schedule Cards -->
+            <div id="doctor-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Doctor Card 1 -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow doctor-card" data-specialty="umum" data-days="senin,rabu,jumat">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user-md text-primary-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Dr. Jannes</h3>
+                                <p class="text-primary-600 font-medium">Dokter Umum</p>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-2">(4.9)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-calendar text-secondary-500 w-4 mr-2"></i>
+                                <span>Senin, Rabu, Jumat</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-secondary-500 w-4 mr-2"></i>
+                                <span>08:00 - 12:00</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-circle text-green-500 w-4 mr-2"></i>
+                                <span class="text-green-600 font-medium">Available</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-accent-500 hover:bg-accent-600 text-white py-2 px-4 rounded-md font-medium transition-colors pesan-antrian-btn" 
+                                data-doctor="Dr. Jannes" data-specialty="Dokter Umum">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Pesan Antrian
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 2 -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow doctor-card" data-specialty="anak" data-days="selasa,kamis,sabtu">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-baby text-secondary-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Dr. Gilbert</h3>
+                                <p class="text-secondary-600 font-medium">Spesialis Anak</p>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-2">(4.8)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-calendar text-secondary-500 w-4 mr-2"></i>
+                                <span>Selasa, Kamis, Sabtu</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-secondary-500 w-4 mr-2"></i>
+                                <span>09:00 - 15:00</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-circle text-green-500 w-4 mr-2"></i>
+                                <span class="text-green-600 font-medium">Available</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-accent-500 hover:bg-accent-600 text-white py-2 px-4 rounded-md font-medium transition-colors pesan-antrian-btn" 
+                                data-doctor="Dr. Gilbert" data-specialty="Spesialis Anak">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Pesan Antrian
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 3 -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow doctor-card" data-specialty="jantung" data-days="senin,selasa,kamis">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-heartbeat text-red-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Dr. Marvel</h3>
+                                <p class="text-red-600 font-medium">Spesialis Jantung</p>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-2">(4.9)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-calendar text-secondary-500 w-4 mr-2"></i>
+                                <span>Senin, Selasa, Kamis</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-secondary-500 w-4 mr-2"></i>
+                                <span>10:00 - 14:00</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-circle text-yellow-500 w-4 mr-2"></i>
+                                <span class="text-yellow-600 font-medium">Limited</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-accent-500 hover:bg-accent-600 text-white py-2 px-4 rounded-md font-medium transition-colors pesan-antrian-btn" 
+                                data-doctor="Dr. Marvel" data-specialty="Spesialis Jantung">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Pesan Antrian
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 4 -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow doctor-card" data-specialty="saraf" data-days="rabu,jumat">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-brain text-purple-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Dr. Surya</h3>
+                                <p class="text-purple-600 font-medium">Spesialis Saraf</p>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-2">(4.7)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-calendar text-secondary-500 w-4 mr-2"></i>
+                                <span>Rabu, Jumat</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-secondary-500 w-4 mr-2"></i>
+                                <span>13:00 - 17:00</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-circle text-green-500 w-4 mr-2"></i>
+                                <span class="text-green-600 font-medium">Available</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-accent-500 hover:bg-accent-600 text-white py-2 px-4 rounded-md font-medium transition-colors pesan-antrian-btn" 
+                                data-doctor="Dr. Surya" data-specialty="Spesialis Saraf">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Pesan Antrian
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 5 -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow doctor-card" data-specialty="mata" data-days="senin,rabu,sabtu">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-eye text-blue-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Dr. Jevon</h3>
+                                <p class="text-blue-600 font-medium">Spesialis Mata</p>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-2">(4.8)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-calendar text-secondary-500 w-4 mr-2"></i>
+                                <span>Senin, Rabu, Sabtu</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-secondary-500 w-4 mr-2"></i>
+                                <span>08:00 - 16:00</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-circle text-red-500 w-4 mr-2"></i>
+                                <span class="text-red-600 font-medium">Full</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-gray-400 text-white py-2 px-4 rounded-md font-medium cursor-not-allowed" disabled>
+                            <i class="fas fa-times mr-2"></i>
+                            Penuh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Doctor Card 6 -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow doctor-card" data-specialty="gigi" data-days="selasa,kamis,sabtu">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-tooth text-green-600 text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Dr. Daffa</h3>
+                                <p class="text-green-600 font-medium">Dokter Gigi</p>
+                                <div class="flex items-center mt-1">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="text-gray-600 text-sm ml-2">(4.9)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-calendar text-secondary-500 w-4 mr-2"></i>
+                                <span>Selasa, Kamis, Sabtu</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-clock text-secondary-500 w-4 mr-2"></i>
+                                <span>09:00 - 17:00</span>
+                            </div>
+                            <div class="flex items-center text-sm">
+                                <i class="fas fa-circle text-green-500 w-4 mr-2"></i>
+                                <span class="text-green-600 font-medium">Available</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-accent-500 hover:bg-accent-600 text-white py-2 px-4 rounded-md font-medium transition-colors pesan-antrian-btn" 
+                                data-doctor="Dr. Daffa" data-specialty="Dokter Gigi">
+                            <i class="fas fa-calendar-plus mr-2"></i>
+                            Pesan Antrian
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg max-w-md mx-4 w-full">
+            <div class="text-center mb-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Pesan Antrian</h3>
+                <p id="selected-doctor" class="text-gray-600"></p>
+            </div>
+            
+            <form id="booking-form" class="space-y-4">
+                <div>
+                    <label for="patient-name" class="block text-sm font-medium text-gray-700 mb-1">Nama Pasien</label>
+                    <input type="text" id="patient-name" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="patient-id" class="block text-sm font-medium text-gray-700 mb-1">Nomor KTP/ID</label>
+                    <input type="text" id="patient-id" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="appointment-date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Kunjungan</label>
+                    <input type="date" id="appointment-date" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                </div>
+                <div class="flex space-x-3">
+                    <button type="button" id="cancel-booking" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded-md font-medium transition-colors">
+                        Batal
+                    </button>
+                    <button type="submit" class="flex-1 bg-primary-500 hover:bg-primary-600 text-white py-2 px-4 rounded-md font-medium transition-colors">
+                        Pesan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-600 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Antrian Berhasil Dipesan!</h3>
+                <p class="text-gray-600 mb-6">Nomor antrian Anda telah berhasil dibuat. Silakan datang sesuai jadwal yang telah ditentukan.</p>
+                <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                    <p class="text-sm text-gray-600 mb-2">Nomor Antrian:</p>
+                    <p id="queue-number" class="text-2xl font-bold text-primary-600"></p>
+                </div>
+                <button id="success-close" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md font-medium">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('appointment-date').setAttribute('min', today);
+
+        // Search and filter functionality
+        const searchInput = document.getElementById('search-doctor');
+        const specialtyFilter = document.getElementById('filter-specialty');
+        const dayFilter = document.getElementById('filter-day');
+        const doctorCards = document.querySelectorAll('.doctor-card');
+
+        function filterDoctors() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedSpecialty = specialtyFilter.value;
+            const selectedDay = dayFilter.value;
+
+            doctorCards.forEach(card => {
+                const doctorName = card.querySelector('h3').textContent.toLowerCase();
+                const specialty = card.getAttribute('data-specialty');
+                const days = card.getAttribute('data-days');
+
+                const matchesSearch = doctorName.includes(searchTerm) || 
+                                    card.querySelector('p').textContent.toLowerCase().includes(searchTerm);
+                const matchesSpecialty = !selectedSpecialty || specialty === selectedSpecialty;
+                const matchesDay = !selectedDay || days.includes(selectedDay);
+
+                if (matchesSearch && matchesSpecialty && matchesDay) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterDoctors);
+        specialtyFilter.addEventListener('change', filterDoctors);
+        dayFilter.addEventListener('change', filterDoctors);
+
+        // Booking modal functionality
+        const bookingModal = document.getElementById('booking-modal');
+        const successModal = document.getElementById('success-modal');
+        const selectedDoctorElement = document.getElementById('selected-doctor');
+        const bookingForm = document.getElementById('booking-form');
+        const cancelBooking = document.getElementById('cancel-booking');
+        const successClose = document.getElementById('success-close');
+
+        // Open booking modal
+        document.querySelectorAll('.pesan-antrian-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const doctorName = this.getAttribute('data-doctor');
+                const specialty = this.getAttribute('data-specialty');
+                selectedDoctorElement.textContent = `${doctorName} - ${specialty}`;
+                bookingModal.classList.remove('hidden');
+                bookingModal.classList.add('flex');
+            });
+        });
+
+        // Close booking modal
+        cancelBooking.addEventListener('click', function() {
+            bookingModal.classList.add('hidden');
+            bookingModal.classList.remove('flex');
+            bookingForm.reset();
+        });
+
+        // Handle booking form submission
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Generate queue number
+            const queueNumber = 'A' + Math.floor(Math.random() * 100).toString().padStart(3, '0');
+            document.getElementById('queue-number').textContent = queueNumber;
+            
+            // Close booking modal and show success modal
+            bookingModal.classList.add('hidden');
+            bookingModal.classList.remove('flex');
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+            
+            // Reset form
+            bookingForm.reset();
+        });
+
+        // Close success modal
+        successClose.addEventListener('click', function() {
+            successModal.classList.add('hidden');
+            successModal.classList.remove('flex');
+        });
+    </script>
+
+        <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Service buttons hover effect
+        document.querySelectorAll('.bg-white button').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Informasi lebih lanjut akan segera tersedia!');
+            });
+        });
+    </script>
+
+</body>
+</html>
