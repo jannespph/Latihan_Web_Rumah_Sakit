@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran Pasien Online - Rumah Sakit Mabar</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pendaftaran Pasien - Rumah Sakit Mabar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -38,9 +38,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+<!-- Header -->
+    <header class="bg-white shadow-sm fixed top-0 left-0 w-full z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
@@ -52,236 +53,154 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="index.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="pendaftaran.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
                         <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
                         <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
-                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="pendaftaran.html" class="text-primary-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="hubungi.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
                         <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
                     </div>
                 </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div> 
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>    
             </div>
         </nav>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="text-pray-600 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
-                <a href="pendaftaran.html" class="text-primary-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
-                <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
-                <a href="layanan.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
-                <a href="tentang.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
-                <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
-                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
-            </div>
-        </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="py-12">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-lg shadow-md p-8">
-                <div class="text-center mb-8">
-                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Formulir Pendaftaran Pasien Baru / Kunjungan</h1>
-                    <p class="text-gray-600">Silakan lengkapi data berikut untuk mendaftar kunjungan ke rumah sakit</p>
-                </div>
+  <main class="w-full max-w-3xl pt-24">
+    <section class="bg-white shadow-xl rounded-2xl p-8">
+      <h1 class="text-3xl font-bold text-cyan-700 mb-3 text-center">Form Pendaftaran Pasien</h1>
+      <p class="text-sm text-gray-600 mb-8 text-center">Isi data berikut dengan benar untuk mendaftar sebagai pasien di <span class="font-semibold text-cyan-700">Rumah Sakit Mabar</span>.</p>
 
-                <form id="registrationForm" class="space-y-6">
-                    <!-- Personal Details Section -->
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                            <i class="fas fa-user text-primary-500 mr-2"></i>
-                            Data Pribadi
-                        </h2>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap *</label>
-                                <input type="text" id="fullName" name="fullName" required 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="idNumber" class="block text-sm font-medium text-gray-700 mb-1">Nomor KTP *</label>
-                                <input type="text" id="idNumber" name="idNumber" required 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="birthDate" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Lahir *</label>
-                                <input type="date" id="birthDate" name="birthDate" required 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin *</label>
-                                <div class="flex space-x-4 mt-2">
-                                    <label class="flex items-center">
-                                        <input type="radio" name="gender" value="male" required class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300">
-                                        <span class="ml-2 text-sm text-gray-700">Laki-laki</span>
-                                    </label>
-                                    <label class="flex items-center">
-                                        <input type="radio" name="gender" value="female" required class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300">
-                                        <span class="ml-2 text-sm text-gray-700">Perempuan</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Alamat *</label>
-                            <textarea id="address" name="address" rows="3" required 
-                                      class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-4 mt-4">
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon *</label>
-                                <input type="tel" id="phone" name="phone" required 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                                <input type="email" id="email" name="email" required 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            </div>
-                        </div>
-                    </div>
+      <form id="patientForm" class="space-y-5" novalidate>
+        <!-- Data Pribadi -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="namaLengkap" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+            <input id="namaLengkap" name="namaLengkap" type="text" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500" placeholder="Contoh: Jannes Pakpahan" />
+          </div>
 
-                    <!-- Appointment Details Section -->
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                            <i class="fas fa-calendar-alt text-secondary-500 mr-2"></i>
-                            Detail Kunjungan
-                        </h2>
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="visitDate" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Kunjungan *</label>
-                                <input type="date" id="visitDate" name="visitDate" required 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="visitTime" class="block text-sm font-medium text-gray-700 mb-1">Waktu Kunjungan *</label>
-                                <select id="visitTime" name="visitTime" required 
-                                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                                    <option value="">Pilih Waktu</option>
-                                    <option value="08:00">08:00 - 09:00</option>
-                                    <option value="09:00">09:00 - 10:00</option>
-                                    <option value="10:00">10:00 - 11:00</option>
-                                    <option value="11:00">11:00 - 12:00</option>
-                                    <option value="13:00">13:00 - 14:00</option>
-                                    <option value="14:00">14:00 - 15:00</option>
-                                    <option value="15:00">15:00 - 16:00</option>
-                                    <option value="16:00">16:00 - 17:00</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <label for="department" class="block text-sm font-medium text-gray-700 mb-1">Poli/Departemen *</label>
-                            <select id="department" name="department" required 
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                                <option value="">Pilih Poli/Departemen</option>
-                                <option value="umum">Poli Umum</option>
-                                <option value="gigi">Poli Gigi</option>
-                                <option value="anak">Poli Anak</option>
-                                <option value="saraf">Poli Saraf</option>
-                                <option value="jantung">Poli Jantung</option>
-                                <option value="mata">Poli Mata</option>
-                                <option value="kandungan">Poli Kandungan</option>
-                            </select>
-                        </div>
-                        <div class="mt-4">
-                            <label for="complaint" class="block text-sm font-medium text-gray-700 mb-1">Keluhan Singkat (Opsional)</label>
-                            <textarea id="complaint" name="complaint" rows="3" placeholder="Jelaskan keluhan Anda secara singkat..."
-                                      class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <div class="text-center">
-                        <button type="submit" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors inline-flex items-center">
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Kirim Pendaftaran
-                        </button>
-                    </div>
-                </form>
-            </div>
+          <div>
+            <label for="nik" class="block text-sm font-medium text-gray-700">NIK</label>
+            <input id="nik" name="nik" type="text" pattern="[0-9]{16}" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500" placeholder="16 digit NIK" />
+          </div>
         </div>
-    </main>
 
-    <!-- Success Modal -->
-    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
-            <div class="text-center">
-                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-check text-green-600 text-3xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Pendaftaran Berhasil!</h3>
-                <p class="text-gray-600 mb-6">Terima kasih telah mendaftar. Kami akan menghubungi Anda untuk konfirmasi jadwal kunjungan.</p>
-                <div class="bg-gray-50 p-4 rounded-lg mb-6">
-                    <p class="text-sm text-gray-600 mb-2">Nomor Pendaftaran:</p>
-                    <p id="registration-number" class="text-lg font-bold text-primary-600"></p>
-                </div>
-                <button id="modal-close" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-md font-medium">
-                    OK
-                </button>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="tanggalLahir" class="block text-sm font-medium text-gray-700">Tanggal Lahir</label>
+            <input id="tanggalLahir" name="tanggalLahir" type="date" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500" />
+          </div>
+
+          <div>
+            <label for="jenisKelamin" class="block text-sm font-medium text-gray-700">Jenis Kelamin</label>
+            <select id="jenisKelamin" name="jenisKelamin" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500">
+              <option value="">-- Pilih --</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
         </div>
-    </div>
 
-    <script>
-        // Set minimum date to today
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('visitDate').setAttribute('min', today);
+        <!-- Kontak dan Alamat -->
+        <div>
+          <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat Lengkap</label>
+          <textarea id="alamat" name="alamat" rows="2" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500" placeholder="Kota, Kecamatan, Jalan, Nomor Rumah..."></textarea>
+        </div>
 
-        // Form submission
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Generate random registration number
-            const registrationNumber = 'REG' + Date.now().toString().slice(-6);
-            document.getElementById('registration-number').textContent = registrationNumber;
-            
-            // Show success modal
-            const successModal = document.getElementById('success-modal');
-            successModal.classList.remove('hidden');
-            successModal.classList.add('flex');
-            
-            // Clear form
-            this.reset();
-        });
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="telepon" class="block text-sm font-medium text-gray-700">Nomor Telepon / HP</label>
+            <input id="telepon" name="telepon" type="tel" pattern="[0-9+\- ]{6,20}" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500" placeholder="08xxxxxxxxxx" />
+          </div>
 
-        // Close modal
-        document.getElementById('modal-close').addEventListener('click', function() {
-            const successModal = document.getElementById('success-modal');
-            successModal.classList.add('hidden');
-            successModal.classList.remove('flex');
-        });
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email (Opsional)</label>
+            <input id="email" name="email" type="email" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500" placeholder="nama@contoh.com" />
+          </div>
+        </div>
 
-        // Phone number formatting
-        document.getElementById('phone').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 0) {
-                if (value.startsWith('0')) {
-                    value = '+62' + value.substring(1);
-                } else if (!value.startsWith('62')) {
-                    value = '+62' + value;
-                }
-            }
-            e.target.value = value;
-        });
+        <!-- Data Medis -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="golDarah" class="block text-sm font-medium text-gray-700">Golongan Darah</label>
+            <select id="golDarah" name="golDarah" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500">
+              <option value="">-- Pilih --</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="AB">AB</option>
+              <option value="O">O</option>
+            </select>
+          </div>
 
-        // ID Number formatting (16 digits)
-        document.getElementById('idNumber').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            if (value.length > 16) {
-                value = value.substring(0, 16);
-            }
-            e.target.value = value;
-        });
-    </script>
+          <div>
+            <label for="poli" class="block text-sm font-medium text-gray-700">Poli Tujuan</label>
+            <select id="poli" name="poli" required class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500">
+              <option value="">-- Pilih Poli --</option>
+              <option value="Umum">Poli Umum</option>
+              <option value="Gigi">Poli Gigi</option>
+              <option value="Kardiologi">Poli Kardiologi</option>
+              <option value="Anak">Poli Anak</option>
+              <option value="Kandungan">Poli Kandungan</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="riwayatPenyakit" class="block text-sm font-medium text-gray-700">Riwayat Penyakit (Opsional)</label>
+          <textarea id="riwayatPenyakit" name="riwayatPenyakit" rows="2" class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:ring-cyan-500 focus:border-cyan-500" placeholder="Contoh: Diabetes, Hipertensi, Asma..."></textarea>
+        </div>
+
+        <div class="flex items-start space-x-3">
+          <input id="setuju" name="setuju" type="checkbox" required class="mt-1 h-4 w-4" />
+          <label for="setuju" class="text-sm text-gray-700">Saya menyatakan bahwa data di atas benar dan saya setuju dengan <a href="#" class="text-cyan-600 underline">syarat & ketentuan Rumah Sakit Mabar</a>.</label>
+        </div>
+
+        <div class="flex items-center justify-between pt-4">
+          <button type="submit" class="px-6 py-2 bg-cyan-600 text-white font-semibold rounded-xl hover:bg-cyan-700 shadow">Daftar Pasien</button>
+          <button type="reset" id="resetBtn" class="px-4 py-2 rounded-xl border border-gray-300 hover:bg-gray-50">Reset</button>
+        </div>
+
+        <div id="formMessage" class="hidden mt-3 p-3 rounded-md text-sm"></div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('patientForm');
+    const msg = document.getElementById('formMessage');
+
+    function showMessage(text, type = 'success') {
+      msg.classList.remove('hidden', 'bg-green-50', 'text-green-700', 'bg-red-50', 'text-red-700');
+      if (type === 'success') msg.classList.add('bg-green-50', 'text-green-700');
+      else msg.classList.add('bg-red-50', 'text-red-700');
+      msg.innerText = text;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        showMessage('Mohon isi semua data wajib dengan benar.', 'error');
+        return;
+      }
+
+      const data = {
+        namaLengkap: form.namaLengkap.value.trim(),
+        nik: form.nik.value.trim(),
+        tanggalLahir: form.tanggalLahir.value,
+        jenisKelamin: form.jenisKelamin.value,
+        alamat: form.alamat.value.trim(),
+        telepon: form.telepon.value.trim(),
+        email: form.email.value.trim(),
+        golDarah: form.golDarah.value,
+        poli: form.poli.value,
+        riwayatPenyakit: form.riwayatPenyakit.value.trim()
+      };
+
+      console.log('Data Pendaftaran Pasien:', data);
+
+      showMessage('Pendaftaran pasien berhasil! Silakan menuju loket untuk verifikasi.', 'success');
+      form.reset();
+    });
+  </script>
 </body>
 </html>

@@ -40,7 +40,7 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm fixed top-0 left-0 w-full z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
@@ -52,40 +52,76 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="index.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-                        <a href="jadwal-dokter.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="jadwal-dokter.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
                         <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
                         <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
-                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="hubungi.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
                         <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
                     </div>
                 </div>
-                <div class="md:hidden"> 
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
             </div>
         </nav>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
-                <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
-                <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
-                <a href="layanan.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
-                <a href="tentang.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
-                <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
-                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
-            </div>
-        </div>
     </header>
 
-    <!-- Gambar utama -->
-    <section class="relative overflow-hidden mt-6">
-        <img src="gambar1.jpg" alt="Tim Kami" 
-            class="w-full h-[550px] object-cover rounded-none shadow-sm">
-    </section>
+<!-- Gambar Utama Full Tanpa Jarak -->
+<section class="relative overflow-hidden mt-16">
+  <img src="gambar3.jpg" alt="Tim Kami" 
+       class="w-full h-[600px] object-cover brightness-90 transition-all duration-700 hover:brightness-100">
+
+  <!-- Overlay gradient -->
+  <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-800/40 to-transparent"></div>
+
+  <!-- Teks di tengah -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+    <h1 class="text-white text-4xl md:text-6xl font-extrabold drop-shadow-lg animate-fadeInUp">
+      Selamat Datang di <span class="text-blue-300">Rumah Sakit Mabar</span>
+    </h1>
+    <p class="text-blue-100 text-lg md:text-xl mt-4 max-w-2xl leading-relaxed animate-fadeInUp delay-200">
+      Kami berkomitmen memberikan pelayanan kesehatan terbaik untuk Anda dan keluarga.
+    </p>
+    <a href="#layanan" 
+       class="mt-8 bg-white/90 text-blue-900 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-blue-700 hover:text-white transition-all duration-300 animate-fadeInUp delay-400">
+      Lihat Layanan Kami
+    </a>
+  </div>
+</section>
+
+<!-- Animasi -->
+<style>
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+.animate-fadeInUp.delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-fadeInUp.delay-400 {
+  animation-delay: 0.4s;
+}
+</style>
+
+<!-- CSS tambahan opsional -->
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* cegah muncul scroll horizontal */
+}
+</style>
+
+
+<!-- CSS tambahan opsional -->
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* cegah muncul scroll horizontal */
+}
+</style>
 
 
     <!-- Main Content -->
@@ -454,6 +490,50 @@
             </div>
         </div>
     </div>
+
+        <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
+                        <span class="text-xl font-bold">Rumah Sakit Mabar</span>
+                    </div>
+                    <p class="text-gray-400">Melayani dengan hati, mengutamakan kesembuhan Anda.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Kontak</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Jl. Notes No.44b</p>
+                        <p><i class="fas fa-phone mr-2"></i>(+62) 81371099148</p>
+                        <p><i class="fas fa-envelope mr-2"></i>pakpahanjannes0@gmail.com</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Layanan</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Poli Umum</a></li>
+                        <li><a href="#" class="hover:text-white">Gawat Darurat</a></li>
+                        <li><a href="#" class="hover:text-white">Laboratorium</a></li>
+                        <li><a href="#" class="hover:text-white">Spesialis</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Media Sosial</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Rumah Sakit Mabar</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Set minimum date to today

@@ -40,7 +40,7 @@
 </head>
 <body class="font-sans bg-white">
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white shadow-sm fixed top-0 left-0 w-full z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
@@ -52,211 +52,230 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="index.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
                         <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
                         <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
-                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="hubungi.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
                         <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
                     </div>
                 </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
             </div>
         </nav>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
-                <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
-                <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
-                <a href="layanan.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
-                <a href="tentang.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
-                <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
-                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
-            </div>
-        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-cover bg-center py-20" style="background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1920&q=80')">
-        
-        <div class="absolute inset-0 bg-black/60"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-                    Pelayanan Kesehatan <span class="text-primary-100">Terdepan</span> untuk Anda
-                </h1>
-                <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-                    Melayani Dengan Hati, Mengutamakan Kesembuhan Anda
+   <!-- Hero Section Elegan -->
+<section class="relative h-[90vh] bg-cover bg-center flex items-center justify-center" 
+    style="background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1920&q=80')">
+    
+    <!-- Overlay gradasi -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+
+    <!-- Konten -->
+    <div class="relative z-10 text-center px-6">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight animate-fadeIn">
+            Pelayanan Kesehatan <span class="text-blue-400">Terdepan</span> untuk Anda
+        </h1>
+        <p class="text-lg md:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto animate-fadeIn delay-200">
+            Melayani dengan hati, mengutamakan kesembuhan Anda.
+        </p>
+
+        <!-- Tombol CTA -->
+        <div class="flex justify-center gap-4 animate-fadeIn delay-400">
+            <a href="layanan.html" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl">
+                Lihat Layanan
+            </a>
+            <a href="hubungi.html" class="border border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition duration-300">
+                Hubungi Kami
+            </a>
+        </div>
+    </div>
+
+    <!-- Animasi FadeIn -->
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+    </style>
+</section>
+
+<!-- About Us Section (Full Width & Elegant) -->
+<section class="relative bg-cover bg-center py-24" 
+    style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920&q=80')">
+
+    <!-- Overlay lembut -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95 backdrop-blur-sm"></div>
+
+    <div class="relative z-10 max-w-8xl mx-auto px-6 sm:px-10 lg:px-16">
+        <div class="text-center mb-16 animate-fadeIn">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                Tentang Kami
+            </h2>
+            <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                Rumah Sakit Mabar berkomitmen memberikan pelayanan kesehatan terbaik dengan teknologi modern dan tenaga medis profesional yang berpengalaman.
+            </p>
+        </div>
+
+        <!-- 3 Kolom dengan Animasi -->
+        <div class="grid md:grid-cols-3 gap-12 text-center">
+            
+            <div class="p-8 rounded-2xl bg-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fadeIn delay-100">
+                <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-heart text-blue-600 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-3">Pelayanan Terpercaya</h3>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    Melayani dengan sepenuh hati dan profesionalisme tinggi.
                 </p>
-                </div>
-        </div>
-    </section>
-    <!-- About Us Section -->
-    <section class="py-16 relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1920&q=80')">
-        
-        <div class="absolute inset-0 bg-white/90"></div>
+            </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    Rumah Sakit Mabar berkomitmen memberikan pelayanan kesehatan terbaik dengan teknologi modern dan tenaga medis profesional yang berpengalaman.
+            <div class="p-8 rounded-2xl bg-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fadeIn delay-200">
+                <div class="bg-teal-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-stethoscope text-teal-600 text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-3">Teknologi Modern</h3>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    Menggunakan peralatan medis terkini untuk diagnosis yang akurat.
                 </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <div class="text-center">
-                    <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-heart text-primary-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Pelayanan Terpercaya</h3>
-                    <p class="text-gray-600">Melayani dengan sepenuh hati dan profesionalisme tinggi</p>
-                </div>
 
-                <div class="text-center">
-                    <div class="bg-secondary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-stethoscope text-secondary-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Teknologi Modern</h3>
-                    <p class="text-gray-600">Menggunakan peralatan medis terkini untuk diagnosis akurat</p>
+            <div class="p-8 rounded-2xl bg-white/70 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fadeIn delay-300">
+                <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-clock text-pink-600 text-3xl"></i>
                 </div>
-
-                <div class="text-center">
-                    <div class="bg-accent-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-accent-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Layanan 24 Jam</h3>
-                    <p class="text-gray-600">Siap melayani kebutuhan kesehatan Anda kapan saja</p>
-                </div>
-
+                <h3 class="text-2xl font-semibold text-gray-900 mb-3">Layanan 24 Jam</h3>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    Siap melayani kebutuhan kesehatan Anda kapan saja.
+                </p>
             </div>
+
         </div>
-    </section>
+    </div>
 
-    <!-- Services Section -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Layanan Kami</h2>
-                <p class="text-lg text-gray-600">Berbagai layanan kesehatan terlengkap untuk kebutuhan Anda</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-user-md text-primary-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Poli Umum</h3>
-                    <p class="text-gray-600 mb-4">Pemeriksaan kesehatan umum dan konsultasi medis</p>
-                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-ambulance text-red-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Gawat Darurat 24 Jam</h3>
-                    <p class="text-gray-600 mb-4">Layanan emergency siap 24 jam setiap hari</p>
-                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-secondary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-flask text-secondary-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Laboratorium Klinis</h3>
-                    <p class="text-gray-600 mb-4">Pemeriksaan laboratorium lengkap dan akurat</p>
-                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div class="bg-accent-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-baby text-accent-600 text-xl"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Spesialis Anak</h3>
-                    <p class="text-gray-600 mb-4">Perawatan khusus untuk kesehatan anak-anak</p>
-                    <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">Pelajari Lebih Lanjut →</button>
-                </div>
-            </div>
+    <!-- Animasi FadeIn -->
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</section>
+
+    <!-- Testimonials Section (Elegant & Modern) -->
+<section class="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580281657527-47d88c2e38e0?auto=format&fit=crop&w=1920&q=80')] opacity-5 bg-cover bg-center"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <!-- Title -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                Testimoni Pasien
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+                Kepercayaan dan kepuasan pasien adalah prioritas utama kami.
+            </p>
         </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Testimoni Pasien</h2>
-                <p class="text-lg text-gray-600">Kepercayaan pasien adalah prioritas utama kami</p>
+        <!-- Cards -->
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fadeIn delay-100">
+                <div class="flex text-yellow-400 mb-4 justify-center">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700 italic mb-6 text-center leading-relaxed">
+                    “Pelayanan yang sangat memuaskan. Dokter dan perawat sangat ramah dan profesional.”
+                </p>
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-3 shadow-sm">
+                        <i class="fas fa-user text-primary-600 text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-gray-900">Citra</p>
+                        <p class="text-sm text-gray-600">Pasien Poli Umum</p>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fadeIn delay-200">
+                <div class="flex text-yellow-400 mb-4 justify-center">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-700 italic mb-6 text-center leading-relaxed">
+                    “Fasilitas modern dan bersih. Proses pendaftaran online sangat memudahkan.”
+                </p>
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mr-3 shadow-sm">
+                        <i class="fas fa-user text-secondary-600 text-lg"></i>
                     </div>
-                    <p class="text-gray-600 mb-4">"Pelayanan yang sangat memuaskan. Dokter dan perawat sangat ramah dan profesional."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-primary-600"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-900">Citra</p>
-                            <p class="text-sm text-gray-600">Pasien Poli Umum</p>
-                        </div>
+                    <div>
+                        <p class="font-semibold text-gray-900">Japak</p>
+                        <p class="text-sm text-gray-600">Pasien Spesialis</p>
                     </div>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-4">"Fasilitas modern dan bersih. Proses pendaftaran online sangat memudahkan."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-secondary-600"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-900">Japak</p>
-                            <p class="text-sm text-gray-600">Pasien Spesialis</p>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fadeIn delay-300">
+                <div class="flex text-yellow-400 mb-4 justify-center">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <p class="text-gray-700 italic mb-6 text-center leading-relaxed">
+                    “Layanan gawat darurat yang cepat dan tanggap. Terima kasih tim medis yang luar biasa.”
+                </p>
+                <div class="flex items-center justify-center">
+                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mr-3 shadow-sm">
+                        <i class="fas fa-user text-accent-600 text-lg"></i>
                     </div>
-                    <p class="text-gray-600 mb-4">"Layanan gawat darurat yang cepat dan tanggap. Terima kasih tim medis yang luar biasa."</p>
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-accent-100 rounded-full flex items-center justify-center mr-3">
-                            <i class="fas fa-user text-accent-600"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-900">Andika</p>
-                            <p class="text-sm text-gray-600">Pasien IGD</p>
-                        </div>
+                    <div>
+                        <p class="font-semibold text-gray-900">Andika</p>
+                        <p class="text-sm text-gray-600">Pasien IGD</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Animasi -->
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -297,24 +316,10 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 PT. Cipta Hospital Indonesia. All rights reserved.</p>
+                <p>&copy; 2025 Rumah Sakit Mabar</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Service buttons hover effect
-        document.querySelectorAll('.bg-white button').forEach(button => {
-            button.addEventListener('click', function() {
-                alert('Informasi lebih lanjut akan segera tersedia!');
-            });
-        });
-    </script>
 </body>
 </html>

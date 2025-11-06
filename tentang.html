@@ -40,81 +40,101 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm fixed top-0 left-0 w-full z-50">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center">
                         <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
-                        <span class="text-xl font-bold text-gray-900">PT. Cipta Hospital Indonesia</span>
+                        <span class="text-xl font-bold text-gray-900">Rumah Sakit Mabar</span>
                     </a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="index.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-                        <a href="jadwal-dokter.html" class="text-gray-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Pusat Unggulan</a>
+                        <a href="jadwal-dokter.html" class="text-gray-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
                         <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
                         <a href="tentang.html" class="text-primary-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
-                        <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pembayaran</a>
+                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="hubungi.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
                         <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
                     </div>
                 </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
             </div>
         </nav>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="text-pray-600 block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
-                <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pendaftaran</a>
-                <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pusat Unggulan</a>
-                <a href="layanan.html" class="text-gray700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Layanan Kami</a>
-                <a href="tentang.html" class="text-primary-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Tentang Kami</a>
-                <a href="pembayaran.html" class="text-gray-700 hover:text-primary-600 block px-3 py-2 rounded-md text-base font-medium">Pembayaran</a>
-                <a href="login-register.html" class="bg-primary-500 text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
-            </div>
-        </div>
     </header>
 
-    <!-- Gambar utama -->
-    <section class="relative overflow-hidden mt-6">
-        <img src="gambar1.jpg" alt="Tim Kami" 
-            class="w-full h-[550px] object-cover rounded-none shadow-sm">
+   <!-- Banner Fullscreen Elegan -->
+<section class="relative w-full overflow-hidden">
+    <img 
+        src="gambar1.jpg" 
+        alt="Tim Profesional Rumah Sakit Mabar"
+        class="w-screen h-[650px] md:h-[750px] object-cover brightness-[0.65]">
+
+    <!-- Overlay dan Teks -->
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold drop-shadow-2xl tracking-wide mb-4">
+            Tim Profesional Kami
+        </h1>
+        <p class="text-lg md:text-2xl font-light max-w-2xl leading-relaxed drop-shadow-lg">
+            Bersama-sama kami berkomitmen memberikan pelayanan terbaik untuk Anda dan keluarga
+        </p>
+        <div class="mt-6 w-24 h-[3px] bg-emerald-400 rounded-full"></div>
+    </div>
+</section>
+
+<!-- CSS tambahan opsional -->
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* cegah muncul scroll horizontal */
+}
+</style>
+
+    <!-- Tentang Kami Section - Elegan dan Modern -->
+    <section class="relative py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:flex md:items-center md:gap-14">
+            
+            <!-- Gambar -->
+            <div class="md:w-1/2 mb-10 md:mb-0 relative">
+                <div class="absolute -top-6 -left-6 w-28 h-28 bg-primary-200/30 rounded-full blur-2xl"></div>
+                <img src="gambar2.jpg" alt="Dokter dan pasien" 
+                    class="rounded-2xl shadow-2xl w-full object-cover transition-transform duration-700 hover:scale-105">
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary-300/20 rounded-full blur-3xl"></div>
+            </div>
+
+            <!-- Konten Teks -->
+            <div class="md:w-1/2 relative z-10">
+                <span class="bg-primary-100 text-primary-700 font-semibold text-sm px-4 py-1.5 rounded-full shadow-sm">
+                    TENTANG RUMAH SAKIT MABAR
+                </span>
+                
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-6 leading-tight tracking-tight">
+                    Kesehatan dan Kenyamanan Anda<br>
+                    <span class="text-primary-600">Adalah Prioritas Utama Kami</span>
+                </h2>
+                
+                <p class="mt-6 text-gray-600 leading-relaxed text-justify">
+                    <span class="font-medium text-gray-800">Rumah Sakit Mabar</span> adalah rumah sakit modern yang berkomitmen memberikan pelayanan kesehatan terbaik bagi masyarakat Indonesia. 
+                    Dengan fasilitas medis lengkap, teknologi terkini, dan tenaga medis profesional, kami menciptakan pengalaman perawatan yang nyaman, aman, 
+                    serta berkualitas tinggi bagi setiap pasien.
+                </p>
+                
+                <p class="mt-4 text-gray-600 leading-relaxed text-justify">
+                    Kami menyediakan layanan mulai dari pemeriksaan umum, rawat inap, hingga layanan spesialis. 
+                    Dengan semangat melayani sepenuh hati, kami berkomitmen menjadi <span class="text-primary-600 font-semibold">pilihan utama keluarga Indonesia</span> 
+                    dalam menjaga kesehatan.
+                </p>
+
+                <a href="layanan.html" 
+                class="inline-block mt-8 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+                Lihat Layanan Kami
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- Tentang RS -->
-    <section class="max-w-7xl mx-auto py-16 px-6 md:flex md:items-center md:gap-10">
-        <!-- Gambar -->
-        <div class="md:w-1/2 mb-8 md:mb-0">
-            <img src="gambar2.jpg" alt="Dokter dan pasien" class="rounded-xl shadow-lg w-full">
-        </div>
-
-        <!-- Konten Teks -->
-        <div class="md:w-1/2">
-            <span class="bg-primary-100 text-primary-700 font-semibold text-sm px-3 py-1 rounded">
-                TENTANG CIPTA HOSPITAL INDONESIA
-            </span>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-primary-600 mt-4 leading-tight">
-                Kesehatan dan Kenyamanan Anda Adalah<br>Prioritas Utama Kami
-            </h2>
-            <p class="mt-6 text-gray-700 leading-relaxed text-justify">
-                PT. Cipta Hospital Indonesia adalah rumah sakit modern yang berkomitmen memberikan pelayanan
-                kesehatan terbaik bagi masyarakat Indonesia. Dengan fasilitas medis yang lengkap, teknologi terkini,
-                dan tenaga medis profesional, kami berusaha menciptakan pengalaman perawatan yang nyaman, aman, dan
-                berkualitas tinggi untuk setiap pasien.
-            </p>
-            <p class="mt-4 text-gray-700 leading-relaxed text-justify">
-                Kami menyediakan berbagai layanan, mulai dari pemeriksaan umum, rawat inap, hingga layanan spesialis.
-                Dengan semangat melayani sepenuh hati, kami berkomitmen menjadi pilihan utama bagi keluarga dan dunia
-                bisnis dalam menjaga kesehatan.
-            </p>
-        </div>
-    </section>
 
     <!-- Visi, Misi & Nilai-nilai -->
     <section class="bg-blue-50 py-20">
@@ -178,16 +198,16 @@
                 <div>
                     <div class="flex items-center mb-4">
                         <i class="fas fa-hospital text-primary-500 text-2xl mr-3"></i>
-                        <span class="text-xl font-bold">PT. Cipta Hospital Indonesia</span>
+                        <span class="text-xl font-bold">Rumah Sakit Mabar</span>
                     </div>
                     <p class="text-gray-400">Melayani dengan hati, mengutamakan kesembuhan Anda.</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Kontak</h3>
                     <div class="space-y-2 text-gray-400">
-                        <p><i class="fas fa-map-marker-alt mr-2"></i>Jl. Kesehatan No. 123, Jakarta</p>
-                        <p><i class="fas fa-phone mr-2"></i>(021) 1234-5678</p>
-                        <p><i class="fas fa-envelope mr-2"></i>info@ciptahospital.co.id</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Jl. Notes No.44b</p>
+                        <p><i class="fas fa-phone mr-2"></i>(+62) 81371099148</p>
+                        <p><i class="fas fa-envelope mr-2"></i>pakpahanjannes0@gmail.com</p>
                     </div>
                 </div>
                 <div>
@@ -210,7 +230,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 PT. Cipta Hospital Indonesia. All rights reserved.</p>
+                <p>&copy; 2025 Rumah Sakit Mabar</p>
             </div>
         </div>
     </footer>
