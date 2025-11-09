@@ -1,5 +1,5 @@
-<!-- <?php
-include 'db.php';
+<?php
+include("../db.php"); 
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "✅ Akun berhasil dibuat! Silakan login.";
     }
 }
-?> -->
+?> 
 
 <!DOCTYPE html>
 <html lang="id">

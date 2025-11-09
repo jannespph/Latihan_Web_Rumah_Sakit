@@ -51,13 +51,13 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
-                        <a href="layanan.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
-                        <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
-                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-                        <a href="hubungi.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
-                        <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                        <a href="index.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="jadwal-dokter.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
+                        <a href="layanan.php" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
+                        <a href="tentang.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
+                        <a href="pendaftaran.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="hubungi.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
+                        <a href="login_system/login.php" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
           <p class="text-gray-600 leading-relaxed text-sm">
             Layanan konsultasi dengan dokter spesialis maupun umum sesuai kebutuhan pasien.
           </p>
-          <a href="Konsultasi.html" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
+          <a href="Konsultasi.php" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
             SELENGKAPNYA <span class="text-lg">+</span>
           </a>
         </div>
@@ -137,7 +137,7 @@
           <p class="text-gray-600 leading-relaxed text-sm">
             Layanan imunisasi lengkap untuk anak-anak dan dewasa sesuai jadwal resmi.
           </p>
-          <a href="vaksinasi.html" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
+          <a href="vaksinasi.php" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
             SELENGKAPNYA <span class="text-lg">+</span>
           </a>
         </div>
@@ -153,7 +153,7 @@
           <p class="text-gray-600 leading-relaxed text-sm">
             Tersedia 24 jam untuk penanganan darurat dan gawat darurat medis.
           </p>
-          <a href="darurat.html" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
+          <a href="darurat.php" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
             SELENGKAPNYA <span class="text-lg">+</span>
           </a>
         </div>
@@ -169,7 +169,7 @@
           <p class="text-gray-600 leading-relaxed text-sm">
             Pemeriksaan laboratorium dan radiologi dengan peralatan modern.
           </p>
-          <a href="lab.html" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
+          <a href="lab.php" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
             SELENGKAPNYA <span class="text-lg">+</span>
           </a>
         </div>
@@ -185,7 +185,7 @@
           <p class="text-gray-600 leading-relaxed text-sm">
             Layanan perawatan gigi dan mulut untuk segala usia.
           </p>
-          <a href="gigi.html" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
+          <a href="gigi.php" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
             SELENGKAPNYA <span class="text-lg">+</span>
           </a>
         </div>
@@ -201,7 +201,7 @@
           <p class="text-gray-600 leading-relaxed text-sm">
             Pemeriksaan dan perawatan penyakit jantung oleh dokter spesialis berpengalaman.
           </p>
-          <a href="kardiologi.html" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
+          <a href="kardiologi.php" class="text-cyan-600 hover:text-cyan-700 text-sm font-semibold mt-3 flex items-center gap-1">
             SELENGKAPNYA <span class="text-lg">+</span>
           </a>
         </div>

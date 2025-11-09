@@ -1,0 +1,171 @@
+<?php
+session_start();
+include '../db.php';
+
+// Cek login
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php");
+  exit();
+}
+
+// Tambah data dokter
+if (isset($_POST['simpan'])) {
+  $nama = $_POST['nama_dokter'];
+  $spesialis = $_POST['spesialis'];
+  $nohp = $_POST['no_hp'];
+  $alamat = $_POST['alamat'];
+  $jadwal = $_POST['jadwal_praktek'];
+
+  $sql = "INSERT INTO dokter (nama_dokter, spesialis, no_hp, alamat, jadwal_praktek)
+          VALUES ('$nama', '$spesialis', '$nohp', '$alamat', '$jadwal')";
+  $conn->query($sql);
+  header("Location: dashboard_dokter.php");
+  exit();
+}
+
+// Hapus data dokter
+if (isset($_GET['hapus'])) {
+  $id = $_GET['hapus'];
+  $conn->query("DELETE FROM dokter WHERE id='$id'");
+  header("Location: dashboard_dokter.php");
+  exit();
+}
+
+// Fitur Pencarian
+$keyword = $_GET['search'] ?? '';
+$query = "SELECT * FROM dokter WHERE 
+          nama_dokter LIKE '%$keyword%' 
+          OR spesialis LIKE '%$keyword%' 
+          OR no_hp LIKE '%$keyword%'
+          ORDER BY id DESC";
+$result = $conn->query($query);
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Admin - Data Dokter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white px-8 py-4 flex justify-between items-center shadow-lg">
+    <h1 class="text-2xl font-bold">🏥 Dashboard Admin</h1>
+    <div>
+      <span class="mr-4">👤 <?= $_SESSION['username'] ?></span>
+      <a href="logout.php" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded">Logout</a>
+    </div>
+  </nav>
+
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg p-6 md:block flex-shrink-0">
+      <h2 class="text-xl font-bold text-gray-700 mb-6">Menu</h2>
+      <ul class="space-y-4">
+        <li><a href="dashboard_admin.php" class="block px-3 py-2 hover:bg-blue-50 text-gray-700 rounded">🏠 Dashboard</a></li>
+        <li><a href="dashboard_pasien.php" class="block px-3 py-2 hover:bg-blue-50 text-gray-700 rounded">🧾 Data Pasien</a></li>
+        <li><a href="dashboard_dokter.php" class="block px-3 py-2 bg-blue-100 text-blue-700 rounded">👨‍⚕️ Data Dokter</a></li>
+        <li><a href="riwayat_kunjungan.php" class="block px-3 py-2 hover:bg-blue-50 text-gray-700 rounded">📜 Riwayat Kunjungan</a></li>
+        <li><a href="dashboard_hubungi.php" class="block px-3 py-2 hover:bg-blue-50 text-gray-700 rounded">💬 Pesan Masuk</a></li>
+        <li><a href="logout.php" class="block px-3 py-2 text-red-600 hover:bg-red-50 rounded">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Konten -->
+    <main class="flex-1 p-8">
+
+      <!-- Form Tambah Dokter -->
+      <section class="bg-white shadow-lg rounded-2xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">👨‍⚕️ Tambah Data Dokter</h2>
+
+        <form method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="font-semibold">Nama Dokter</label>
+            <input type="text" name="nama_dokter" required class="w-full border p-2 rounded mt-1">
+          </div>
+
+          <div>
+            <label class="font-semibold">Spesialis</label>
+            <input type="text" name="spesialis" required class="w-full border p-2 rounded mt-1" placeholder="Contoh: Umum, Gigi, Anak">
+          </div>
+
+          <div>
+            <label class="font-semibold">No HP</label>
+            <input type="text" name="no_hp" required class="w-full border p-2 rounded mt-1">
+          </div>
+
+          <div>
+            <label class="font-semibold">Alamat</label>
+            <input type="text" name="alamat" class="w-full border p-2 rounded mt-1">
+          </div>
+
+          <div class="col-span-2">
+            <label class="font-semibold">Jadwal Praktek</label>
+            <textarea name="jadwal_praktek" rows="2" class="w-full border p-2 rounded mt-1" placeholder="Senin - Jumat, 08:00 - 16:00"></textarea>
+          </div>
+
+          <div class="col-span-2 text-right">
+            <button type="submit" name="simpan" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+              💾 Simpan Data
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Tabel Data Dokter -->
+      <section class="bg-white shadow-lg rounded-2xl p-6">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-bold text-gray-800">📋 Daftar Dokter</h2>
+
+          <!-- Form Pencarian -->
+          <form method="GET" class="flex space-x-2">
+            <input type="text" name="search" value="<?= htmlspecialchars($keyword) ?>"
+              placeholder="Cari nama / spesialis..." 
+              class="border rounded-lg p-2 w-64 focus:ring focus:ring-blue-300 outline-none">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">🔍 Cari</button>
+          </form>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full border text-sm text-left">
+            <thead class="bg-blue-600 text-white">
+              <tr>
+                <th class="p-2">No</th>
+                <th class="p-2">Nama Dokter</th>
+                <th class="p-2">Spesialis</th>
+                <th class="p-2">No HP</th>
+                <th class="p-2">Alamat</th>
+                <th class="p-2">Jadwal Praktek</th>
+                <th class="p-2 text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php if ($result->num_rows > 0): ?>
+                <?php $no=1; while($row = $result->fetch_assoc()): ?>
+                  <tr class="border-b hover:bg-gray-50">
+                    <td class="p-2"><?= $no++ ?></td>
+                    <td class="p-2"><?= $row['nama_dokter'] ?></td>
+                    <td class="p-2"><?= $row['spesialis'] ?></td>
+                    <td class="p-2"><?= $row['no_hp'] ?></td>
+                    <td class="p-2"><?= $row['alamat'] ?></td>
+                    <td class="p-2"><?= $row['jadwal_praktek'] ?></td>
+                    <td class="p-2 text-center">
+                      <a href="edit_dokter.php?id=<?= $row['id'] ?>" class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded">Edit</a>
+                      <a href="?hapus=<?= $row['id'] ?>" onclick="return confirm('Hapus data ini?')" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Hapus</a>
+                    </td>
+                  </tr>
+                <?php endwhile; ?>
+              <?php else: ?>
+                <tr><td colspan="7" class="text-center py-4 text-gray-500">Tidak ada data ditemukan.</td></tr>
+              <?php endif; ?>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

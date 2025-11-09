@@ -1,6 +1,6 @@
-<!-- <?php
+<?php
 session_start();
-include 'db.php';
+include("../db.php");
 
 $message = "";
 
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
-            header("Location: dashboard.php");
+            header("Location: dashboard_admin.php");
             exit;
         } else {
             $message = "❌ Kata sandi salah!";
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "❌ ID Pengguna tidak ditemukan!";
     }
 }
-?> -->
+?> 
 
 <!DOCTYPE html>
 <html lang="id">
@@ -49,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <select class="p-3 rounded-lg text-gray-700">
           <option>Pilih Lokasi</option>
           <option>Medan</option>
-          <option>Jakarta</option>
         </select>
         <input type="text" placeholder="Cari dokter atau layanan" class="p-3 rounded-lg text-gray-700 w-64">
         <button class="bg-blue-600 p-3 rounded-lg">🔍</button>
@@ -72,15 +71,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label class="block mb-2 font-semibold text-gray-700">Kata Sandi</label>
           <input type="password" name="password" required class="w-full border border-gray-300 p-3 rounded-lg mb-2">
 
-          <a href="#" class="text-blue-600 text-sm hover:underline">Lupa Kata Sandi / ID Pengguna?</a>
-
           <div class="mt-6 flex justify-between items-center">
             <button class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition">Masuk</button>
             <a href="register.php" class="border border-blue-700 text-blue-700 px-6 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition">Daftar Baru</a>
           </div>
         </form>
 
-        <p class="text-center text-gray-500 text-sm mt-8">Didukung oleh MphRx. Seluruh hak cipta ©</p>
+        <p class="text-center text-gray-500 text-sm mt-8">Rumah Sakit Mabar</p>
       </div>
     </div>
   </div>

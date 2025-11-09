@@ -104,7 +104,7 @@
     </p>
 
     <div class="mt-10 text-center">
-      <a href="hubungi.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300">
+      <a href="hubungi.php" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300">
         Hubungi Layanan Darurat Sekarang
       </a>
     </div>

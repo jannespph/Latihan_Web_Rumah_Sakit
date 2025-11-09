@@ -51,13 +51,13 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="index.html" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
-                        <a href="jadwal-dokter.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
-                        <a href="layanan.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
-                        <a href="tentang.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
-                        <a href="pendaftaran.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
-                        <a href="hubungi.html" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
-                        <a href="login-register.html" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
+                        <a href="index.php" class="text-primary-600 hover:text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="jadwal-dokter.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Dokter Kami</a>
+                        <a href="layanan.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Layanan Kami</a>
+                        <a href="tentang.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Tentang Kami</a>
+                        <a href="pendaftaran.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pendaftaran</a>
+                        <a href="hubungi.php" class="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Hubungi</a>
+                        <a href="login_system/login.php" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Login</a>
                     </div>
                 </div>
             </div>
@@ -82,10 +82,10 @@
 
         <!-- Tombol CTA -->
         <div class="flex justify-center gap-4 animate-fadeIn delay-400">
-            <a href="layanan.html" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl">
+            <a href="layanan.php" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300 shadow-lg hover:shadow-xl">
                 Lihat Layanan
             </a>
-            <a href="hubungi.html" class="border border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition duration-300">
+            <a href="hubungi.php" class="border border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-gray-900 transition duration-300">
                 Hubungi Kami
             </a>
         </div>

@@ -103,7 +103,7 @@
     </p>
 
     <div class="mt-10 text-center">
-      <a href="jadwal-dokter.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300">
+      <a href="jadwal-dokter.php" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-300">
         Jadwalkan Pemeriksaan Sekarang
       </a>
     </div>
